@@ -1,1 +1,10 @@
-= p.name
+div
+  h1= p.name
+  = "Nume alternative: #{p.name_en}, #{p.name_fr}, #{p.name_ro}"
+  - unless p.image.nil? || p.image.empty?
+    - p.image.each do |img|
+      = image_tag img
+  = p.map.try(:html_safe)
+  = "Latitudine: #{p.lat}, longitudine: #{p.long}"
+  .description
+    = strip_tags p.short_decription.try(:first)

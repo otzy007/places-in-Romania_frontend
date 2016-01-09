@@ -1,5 +1,6 @@
 .results-top
   = render 'search_form' 
 
-- @places.each do |p|
-  = render partial: 'place', locals: { p: p }
+.table-responsive#results
+  - @places.each do |p|
+      = render partial: 'place', locals: { p: p }
