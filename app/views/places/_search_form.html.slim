@@ -1,6 +1,6 @@
 = form_tag search_places_path, method: :get, class: 'form-horizontal' do
   .form-group
     .col-md-9
-      = text_field_tag  :q, nil, class: 'form-control'
+      = text_field_tag  :q, nil, class: 'form-control', value: params[:q]
     .col-md-2
     = submit_tag 'Search', class: 'button btn btn-success btn-labeled valign-middle-flat'
