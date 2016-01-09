@@ -2,4 +2,4 @@
   = render 'search_form' 
 
 - @places.each do |p|
-  = p.name
+  = render partial: 'place', locals: { p: p }
