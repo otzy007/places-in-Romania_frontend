@@ -6,5 +6,6 @@ div
       = image_tag img
   = p.map.try(:html_safe)
   = "Latitudine: #{p.lat}, longitudine: #{p.long}"
+  = gmap(p) if p.lat
   .description
     = strip_tags p.short_decription.try(:first)
