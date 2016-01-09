@@ -17,6 +17,9 @@ gem 'bootstrap-sass'
 gem 'sprockets-rails', '~> 3.0'#, github: 'rails/sprockets'
 gem 'sass-rails'
 
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
