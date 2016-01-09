@@ -4,8 +4,7 @@ div
   - unless p.image.nil? || p.image.empty?
     - p.image.each do |img|
       = image_tag img
-  = p.map.try(:html_safe)
+  = p.map.try(:first).try(:html_safe) || (gmap(p) if p.lat)
   = "Latitudine: #{p.lat}, longitudine: #{p.long}"
-  = gmap(p) if p.lat
   .description
     = strip_tags p.short_decription.try(:first)
