@@ -19,9 +19,6 @@ class Place
   attribute :name_en, String
   attribute :name_ro, String
   attribute :name_fr, String
-  attribute :image, String
-  attribute :short_description, String
-  attribute :link, String
   attribute :map, String
   attribute :osm_id, String
   attribute :lat, String
