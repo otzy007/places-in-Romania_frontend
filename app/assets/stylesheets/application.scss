@@ -1,0 +1,23 @@
+ //= require_tree .
+ //= require_self
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.searchbox {
+  position: absolute;
+  top: 60%;
+}
+
+.results-top {
+  padding: 45px 15px 15px;
+  content: 'Search';
+}
+
+.random-image {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 3em;
+}
