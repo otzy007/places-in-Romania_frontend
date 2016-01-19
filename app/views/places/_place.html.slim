@@ -1,11 +1,23 @@
 article.container
-  header
-    h1= p.name
+  header.border.place-header
+    h1
+      = p.name
+      - if p.lat
+        .btn.btn-default
+          = link_to "Obiective in apropiere", nearby_places_path(lat: p.lat, long: p.long)
+
     = "Nume alternative: #{p.name_en}, #{p.name_fr}, #{p.name_ro}"
-  - unless p.image.nil? || p.image.empty?
-    - p.image.each do |img|
-      = image_tag img
-  = p.map.try(:first).try(:html_safe) || (gmap(p) if p.lat)
-  = "Latitudine: #{p.lat}, longitudine: #{p.long}"
-  .description
-    = strip_tags p.short_decription.try(:first)
+  .border
+    .col-md-4
+      - if p.lat
+        = "Latitudine: #{p.lat}"
+        br
+        = "Longitudine: #{p.long}"
+      .description
+        = strip_tags p.short_decription.try(:first)
+    .col-md-4.col-md-offset-4
+      - unless p.image.nil? || p.image.empty?
+        .place-image
+          - p.image.each do |img|
+            = image_tag img
+    = p.map.try(:first).try(:html_safe) || (gmap(p) if p.lat)

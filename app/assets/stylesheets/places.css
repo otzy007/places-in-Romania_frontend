@@ -2,3 +2,21 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.border {
+  border:1px solid #eee;
+  border-radius: 3px;
+}
+
+.place-header {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.place-image {
+  padding-bottom: 10px;
+}
+
+.description {
+  padding-bottom: 10px;
+}
