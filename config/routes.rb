@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
   resources :places do
-    collection { get 'search' }
+    collection do
+      get 'search'
+      get 'nearby'
+    end
   end
 
   root to: 'places#index'
