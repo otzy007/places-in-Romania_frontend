@@ -29,12 +29,23 @@ class Place
   attribute :address, Hash
   attribute :osm_importance, String
   attribute :alt_names, Hash
+  # attribute :location, Hash
 
-  searchkick
+  settings do
+    mapping do
+      indexes :location, type: 'geo_point'
+    end
+  end
+
+  searchkick merge_mappings: true, locations: ["location"]
 
   def self.random
     Place.search(query: { filtered: { filter: { exists: { field: 'image' }}}})
           .to_a
           .sample
+  end
+
+  def search_data
+    attributes.merge location: [lat, long]
   end
 end
